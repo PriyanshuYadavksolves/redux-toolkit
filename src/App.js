@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import './App.css';
 import Account from './components/Account';
 import Bonus from './components/Bonus';
+import Reward from './components/Reward';
 function App() {
   
   const {amount} = useSelector(state=>state.account) //ye account jo store ke reducer me dala h vhi h
@@ -15,6 +16,8 @@ function App() {
 
       <Account></Account>
       <Bonus></Bonus>
+      <Reward></Reward>
+
     </div>
   );
 }

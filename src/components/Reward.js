@@ -1,22 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { increment } from '../slices/bonusSlice';
+import { increment, incrementByAmount } from '../reducers/reward';
 
-function Bonus() {
-  const {points} = useSelector(state=>state.bonus)
+function Reward() {
+  const {points} = useSelector(state=>state.reward)
   const dispatch = useDispatch()
   
   return (
     <div className="card">
       <div className="container">
         <h4>
-          <b>Bonus Component</b>
+          <b>Reward Component</b>
         </h4>
         <h3>Total Point : ${points}</h3>
 
         <button onClick={()=>dispatch(increment())}>Increment +</button>
+        <button onClick={()=>dispatch(incrementByAmount(7))}>Increment By Seven</button>
       </div>
     </div>
   );
 }
 
-export default Bonus;
+export default Reward;
