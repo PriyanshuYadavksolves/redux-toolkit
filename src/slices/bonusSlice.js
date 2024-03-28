@@ -7,7 +7,7 @@ const incByAmt = createAction('account/incrementByAmount')
 const initialState = {
     points:1,
 }
-
+  
 const bonusSlice = createSlice({
     name:'bonus',
     initialState,
