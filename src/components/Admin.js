@@ -14,7 +14,7 @@ function Admin() {
           <b>Admin Component : </b>
           {isLoading && <p>Loading ...</p>}
         </h4>
-        {isSuccess && data && data.map(account => <p>{account.id}:{account.amount}
+        {isSuccess && data && data.map(account => <p key={account.id}>{account.id}:{account.amount}
           <button onClick={()=>deleteAccount(account.id)}>Delete Account</button>
           <button onClick={()=>updateAccount({id:account.id,amount:300})}>Update Account</button>
 

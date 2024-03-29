@@ -1,15 +1,13 @@
 import { createContext, useState } from "react";
 
-export const BonusContext = createContext();
+export const BonusContext = createContext()
 
-export const BonusContextProvider = ({ children }) => {
-    const [bonusName,setBonusName] = useState('bonus')
-
-  return (
-     <BonusContext.Provider value={{bonusName,setBonusName}}>
-        {children}
-    </BonusContext.Provider>)
-};
-
-
+export const BonusContextProvider = ({children}) =>{
+    const [bonus,setBonus] = useState(0)
+    return (
+        <BonusContext.Provider value={{bonus,setBonus}}>
+            {children}
+        </BonusContext.Provider>
+    )
+}
 

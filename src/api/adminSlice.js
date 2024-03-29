@@ -9,6 +9,7 @@ export const adminApi = createApi({
         query: () => `accounts`,
         providesTags:['accounts']
       }),
+
       addAccounts: builder.mutation({  //query for reading data otherwise use mutation
         query: (amount,id) => ({
             url: 'accounts',
@@ -17,6 +18,7 @@ export const adminApi = createApi({
         }),
         invalidatesTags:['accounts']  //jo jo data purana ho gya h unhe invalidates kr do
       }),
+
       deleteAccounts: builder.mutation({  //query for reading data otherwise use mutation
         query: (id) => ({
             url: 'accounts/'+id,
@@ -24,6 +26,7 @@ export const adminApi = createApi({
         }),
         invalidatesTags:['accounts']  //jo jo data purana ho gya h unhe invalidates kr do
       }),
+
       updateAccounts: builder.mutation({  //query for reading data otherwise use mutation
         query: ({id,amount}) => ({
             url: 'accounts/'+id,

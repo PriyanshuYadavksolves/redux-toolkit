@@ -7,17 +7,21 @@ import { BonusContext } from '../context/BonusContext';
 function Bonus() {
   const {points} = useSelector(state=>state.bonus)
   const dispatch = useDispatch()
-  const {bonusName,setBonusName} = useContext(BonusContext)
+  const {bonus,setBonus} = useContext(BonusContext)
+  const incrementBonusContextValue = () =>{
+    setBonus(bonus+1)
+  }
 
   return (
     <div className="card">
       <div className="container">
         <h4>
-          <b>Bonus Component :{bonusName} </b>
+          <b>Bonus Component : {bonus} </b>
         </h4>
         <h3>Total Point : ${points}</h3>
 
         <button onClick={()=>dispatch(increment())}>Increment +</button>
+        <button onClick={incrementBonusContextValue}>Increment +</button>
       </div>
     </div>
   );
